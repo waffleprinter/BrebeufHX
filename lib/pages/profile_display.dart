@@ -35,42 +35,51 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(top: 150),
-        child: ListView(
-          children: [
-            // profile
-            Icon(
-              Icons.person,
-              size: 72
-            ),
+        child: Center(
+          child: Column(
+            children: [
+              // profile
+              Icon(
+                Icons.person,
+                size: 72
+              ),
 
-            Text(
-              name,
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            Text(
-              pronouns,
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
+              Text(
+                name,
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                pronouns,
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
 
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade300,
-                  borderRadius: BorderRadius.circular(20)
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Text(
-                    bio,
-                    textAlign: TextAlign.center,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade300,
+                    borderRadius: BorderRadius.circular(20)
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Text(
+                      bio,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ),
               ),
-            )
-          ],
+
+              TextButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Profile()));
+                },
+                child: Text("Recreate Profile"),
+              ),
+            ],
+          ),
         ),
       )
     );

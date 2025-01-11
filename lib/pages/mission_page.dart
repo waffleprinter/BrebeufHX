@@ -51,20 +51,14 @@ class _MissionPageState extends State<MissionPage> {
 
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 60, vertical: 20),
-                child: Container(
-                  // decoration: BoxDecoration(
-                  //   color: Colors.grey,
-                  //   borderRadius: BorderRadius.circular(16),
-                  // ),
-                  child: Text(
-                    "We know that choosing a career path can be overwhelming. "
-                        "We're here to help individuals choose a career by "
-                        "discovering their true passions, strengths, and values.",
-                    style: TextStyle(
-                      fontSize: 15,
-                    ),
-                    textAlign: TextAlign.center,
+                child: Text(
+                  "We know that choosing a career path can be overwhelming. "
+                      "We're here to help individuals choose a career by "
+                      "discovering their true passions, strengths, and values.",
+                  style: TextStyle(
+                    fontSize: 15,
                   ),
+                  textAlign: TextAlign.center,
                 ),
               )
             ],
