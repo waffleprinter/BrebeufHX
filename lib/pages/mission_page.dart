@@ -15,6 +15,7 @@ class _MissionPageState extends State<MissionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.pink[50],
       body: Padding(
         padding: EdgeInsets.only(top: 100),
         child: Center(
@@ -66,7 +67,7 @@ class _MissionPageState extends State<MissionPage> {
                 ),
               ),
 
-              SizedBox(height: 60), // PADDING
+              SizedBox(height: 20), // PADDING
 
               CheckboxListTile(
                 value: _hasTakenQuiz,

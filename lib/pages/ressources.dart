@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
-void main() {
-  runApp(Ressources());
-}
+// void main() {
+//   runApp(Ressources());
+// }
 
 
 void openLink(String urlString) async {
@@ -15,22 +15,20 @@ void openLink(String urlString) async {
   catch(e){
     print("Error: $e");}}
 
-class Ressources extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-        title: Center(child: Text("LIST OF RESSOURCES",
-        style: TextStyle(
-            fontWeight: FontWeight.bold))),
-        backgroundColor: Colors.yellow[700],),
-        backgroundColor: Colors.yellow[300],
-        body: Center(child: MyDropdownButton()),
-      ),
-    );
-  }
-}
+// class Ressources extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//       title: Center(child: Text("LIST OF RESOURCES",
+//       style: TextStyle(
+//           fontWeight: FontWeight.bold))),
+//       backgroundColor: Colors.yellow[700],),
+//       backgroundColor: Colors.yellow[300],
+//       body: Center(child: MyDropdownButton()),
+//     );
+//   }
+// }
 
 class MyDropdownButton extends StatefulWidget {
   @override
@@ -156,65 +154,77 @@ class _MyDropdownButtonState extends State<MyDropdownButton> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        DropdownButton<String>(
-          padding: EdgeInsets.all(20),
-          hint: Text('Learn about an expert in the field',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-            color: Colors.black)          ),
-          items: _options_people.map((String option) {
-            return DropdownMenuItem<String>(
-              value: option,
-              child: Text(option),
-            );
-          }).toList(),
-          onChanged: (String? newValue) {openLink(links_people[_options_people.indexOf(newValue!)]);
-          },
-        ),
-        SizedBox(height: 20),
+    return Scaffold(
+      backgroundColor: Colors.pink[100],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Resources",
+              style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 20),
 
-        DropdownButton<String>(
-          padding: EdgeInsets.all(20),
-          hint: Text('WOMEN IN STEM!! Local help and some sucess stories',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 17,
-            color: Colors.black
-          )),
-          items: _options_women.map((String option) {
-            return DropdownMenuItem<String>(
-              value: option,
-              child: Text(option),
-            );
-          }).toList(),
-          onChanged: (String? newValue) {openLink(links_women[_options_women.indexOf(newValue!)]);
-          },
-        ),
-        SizedBox(height: 20),
+            DropdownButton<String>(
+              hint: Text('Learn about an expert in the field',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                color: Colors.black)          ),
+              items: _options_people.map((String option) {
+                return DropdownMenuItem<String>(
+                  value: option,
+                  child: Text(option),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {openLink(links_people[_options_people.indexOf(newValue!)]);
+              },
+            ),
+            SizedBox(height: 20),
 
-        DropdownButton<String>(
-          padding: EdgeInsets.all(20),
-          hint: Text('Organisms for job finding',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-            color: Colors.black)),
-          items: _options_organisms.map((String option) {
-            return DropdownMenuItem<String>(
-              value: option,
-              child: Text(option),
-            );
-          }).toList(),
-          onChanged: (String? newValue) {openLink(links_organisms[_options_organisms.indexOf(newValue!)]);
-          },
-        ),
-        SizedBox(height: 20),
+            DropdownButton<String>(
+              hint: Text('WOMEN IN STEM!!',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                color: Colors.black
+              )),
+              items: _options_women.map((String option) {
+                return DropdownMenuItem<String>(
+                  value: option,
+                  child: Text(option),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {openLink(links_women[_options_women.indexOf(newValue!)]);
+              },
+            ),
+            SizedBox(height: 20),
 
-      ],
+            DropdownButton<String>(
+              hint: Text('Organizations for job finding',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                color: Colors.black)),
+              items: _options_organisms.map((String option) {
+                return DropdownMenuItem<String>(
+                  value: option,
+                  child: Text(option),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {openLink(links_organisms[_options_organisms.indexOf(newValue!)]);
+              },
+            ),
+            SizedBox(height: 20),
+
+          ],
+        ),
+      ),
     );
   }
 }
