@@ -4,6 +4,8 @@ import 'package:brebeuf_hx/pages/profile_display.dart';
 import 'package:brebeuf_hx/pages/ressources.dart';
 import 'package:flutter/material.dart';
 
+import 'QuizPage/QuizPage.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -22,6 +24,7 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> _pages = [
     const MissionPage(),
+    QuizPage(),
     MyDropdownButton(),
     const ProfilePage(),
     // ADD OTHER PAGES HERE

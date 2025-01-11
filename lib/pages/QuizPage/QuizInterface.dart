@@ -2,6 +2,7 @@ import 'package:brebeuf_hx/pages/CostumizedWigets/SectionTile.dart';
 import 'package:flutter/material.dart';
 
 import '../class/Quiz.dart';
+import '../home_page.dart';
 class QuizInterface extends StatefulWidget {
   final List<double> weight = [0.2, 0.3, 0.3, 0.2];
 
@@ -247,6 +248,10 @@ class _QuizInterfaceState extends State<QuizInterface> {
                     widget.onFinalScoreChanged(widget.finalScore);
 
                     print('Quiz completed! Final score: ${widget.finalScore}');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePage())
+                    );
                   },
                   child: Text('Finish Quiz'),
                 ),
