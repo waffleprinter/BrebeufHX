@@ -31,11 +31,15 @@ class _ProfileState1 extends State<Profile> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              SizedBox(height: 20,),
+
               Icon(
                 Icons.person,
                 size: 72,
-                color: Colors.amber[900],
+                color: Color(0xff4f5959),
               ),
+              SizedBox(height: 30,),
+
 
               TextField(
                 controller: myController,
@@ -47,6 +51,7 @@ class _ProfileState1 extends State<Profile> {
                   //newUser;
                 }
               ),
+              SizedBox(height: 20,),
 
               TextField(
                 controller: myController2,
@@ -58,17 +63,23 @@ class _ProfileState1 extends State<Profile> {
                   //pronouns();
                 }
               ),
+              SizedBox(height: 20,),
+
 
               TextField(
                   controller: myController3,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xff4f5959))
+                      ),
                       hintText: third_prompt
                   ),
                   onSubmitted: (String value){
                     //pronouns();
                   }
               ),
+              SizedBox(height: 40,),
+
 
               ElevatedButton(
                 onPressed: () async {
@@ -91,8 +102,15 @@ class _ProfileState1 extends State<Profile> {
                       ),
                   );
                 },
-                child: Text("Create account"),
+                child: Text(
+                  "Create account",
+                  style: TextStyle(
+                    color: Color(0xff4f5959)
+                  ),
+                ),
               ),
+              SizedBox(height: 20,),
+
 
             ],
           ),

@@ -155,7 +155,7 @@ class _MyDropdownButtonState extends State<MyDropdownButton> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pink[100],
+      backgroundColor: Color(0xffbdc7cb),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

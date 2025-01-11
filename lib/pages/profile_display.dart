@@ -33,7 +33,7 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      backgroundColor: Colors.pink[200],
+      backgroundColor: Color(0xffbdc7cb),
       body: Padding(
         padding: const EdgeInsets.only(top: 150),
         child: Center(
@@ -59,8 +59,9 @@ class _ProfilePageState extends State<ProfilePage> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
                 child: Container(
+                  width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                    color: Colors.pink[100],
+                    color: Color(0xffc1c1c1),
                     borderRadius: BorderRadius.circular(20)
                   ),
                   child: Padding(

@@ -15,7 +15,7 @@ class _MissionPageState extends State<MissionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pink[50],
+      backgroundColor: Color(0xffbdc7cb),
       body: Padding(
         padding: EdgeInsets.only(top: 100),
         child: Center(
@@ -44,7 +44,7 @@ class _MissionPageState extends State<MissionPage> {
                       TextSpan(
                         text: "MISSION",
                         style: TextStyle(
-                          color: Colors.red,
+                          color: Color(0xff778a7a),
                           fontWeight: FontWeight.bold,
                           fontSize: 36
                         )
