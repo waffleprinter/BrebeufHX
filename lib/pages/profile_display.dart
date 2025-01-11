@@ -1,17 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:brebeuf_hx/pages/profile.dart';
 
-class ProfilePage extends StatefulWidget {
-  final String name;
-  final String pronouns;
+import '../components/shared_preferences_utils.dart';
 
-  const ProfilePage({super.key, required this.name, required this.pronouns});
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({super.key});
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  String name = "Loading...";
+  String pronouns = "Loading...";
+
+  @override
+  void initState() {
+    super.initState();
+    _loadProfileData();
+  }
+
+  Future<void> _loadProfileData() async {
+    final prefs = await SharedPreferencesUtils.getInstance();
+    setState(() {
+      name = prefs.getString('name') ?? "No Name"; // Fallback if no data
+      pronouns = prefs.getString('pronouns') ?? "No Pronouns";
+    });
+  }
+
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -30,12 +46,12 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
 
           Text(
-            widget.name,
+            name,
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 24),
           ),
           Text(
-            widget.pronouns,
+            pronouns,
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 18),
           ),

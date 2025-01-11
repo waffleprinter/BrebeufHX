@@ -1,5 +1,9 @@
+import 'package:brebeuf_hx/components/shared_preferences_utils.dart';
+import 'package:brebeuf_hx/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:brebeuf_hx/pages/profile_display.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:brebeuf_hx/components/shared_preferences_utils.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -77,19 +81,21 @@ class _ProfileState1 extends State<Profile> {
               ),
 
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   String name_variable = myController.text;
                   String pronoun_variable = myController2.text;
+
+                  // Get the singleton instance
+                  final prefs = await SharedPreferencesUtils.getInstance();
+
+                  // Save the values using the instance
+                  await prefs.saveString("name", name_variable);
+                  await prefs.saveString("pronouns", pronoun_variable);
 
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ProfilePage(
-                        name: name_variable,
-                        pronouns: pronoun_variable,
-              
-                      ),
-        
+                      builder: (context) => HomePage()
                       ),
                   );
                 },
