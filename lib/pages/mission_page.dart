@@ -58,8 +58,8 @@ class _MissionPageState extends State<MissionPage> {
                   // ),
                   child: Text(
                     "We know that choosing a career path can be overwhelming. "
-                        "We're here to help individuals to discover their "
-                        "true passions, strengths, and values.",
+                        "We're here to help individuals choose a career by "
+                        "discovering their true passions, strengths, and values.",
                     style: TextStyle(
                       fontSize: 15,
                     ),
