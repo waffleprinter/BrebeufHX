@@ -11,8 +11,9 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  String name = "Loading...";
-  String pronouns = "Loading...";
+  String name = "";
+  String pronouns = "";
+  String bio = "";
 
   @override
   void initState() {
@@ -25,40 +26,61 @@ class _ProfilePageState extends State<ProfilePage> {
     setState(() {
       name = prefs.getString('name') ?? "No Name"; // Fallback if no data
       pronouns = prefs.getString('pronouns') ?? "No Pronouns";
+      bio = prefs.getString('bio') ?? "No bio";
     });
   }
 
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      backgroundColor: Colors.amber,
-      appBar: AppBar(
-        title: Text("Profile Page"),
-        backgroundColor: Colors.amber[700],
-      ),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 150),
+        child: ListView(
+          children: [
+            // profile
+            Icon(
+              Icons.person,
+              size: 72
+            ),
 
-      body: ListView(
-        children: [
-          // profile
-          Icon(
-            Icons.person,
-            size: 72
-          ),
+            Text(
+              name,
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            Text(
+              pronouns,
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
 
-          Text(
-            name,
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 24),
-          ),
-          Text(
-            pronouns,
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 18),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade300,
+                  borderRadius: BorderRadius.circular(20)
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Text(
+                    bio,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
       )
     );
   }
 }
 
 //NOTE: this code is still missing the displaying of old results
+
+
+// TO DO
+// ADD A TO DO LIST TO THE HOME PAGE
+// ADD PROFILE EDITING BUTTON
+// ADD BIO
