@@ -16,28 +16,9 @@ class _ProfileState1 extends State<Profile> {
 
   String first_prompt = "Please enter your username";
   String second_prompt = "Please enter your pronouns";
-  String third_prompt = "Please enter a short description of yourself";
+  String third_prompt = "Please write a short bio";
 
-  /*
-  String name_variable = "Placeholder name";
-  String pronoun_variable = "Placeholder name";
-
-
-  
-  String name_varible = "Placeholder";
-  String pronoun_variable = "Placeholder";
- 
-
-  void newUser(){
-    String name_variable = myController.text;
-  }
-  void pronouns(){
-    String pronoun_variable = myController2.text;
-  }
-
-  */
   @override
-  
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.amber,
