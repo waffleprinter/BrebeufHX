@@ -12,7 +12,7 @@ class _MissionPageState extends State<MissionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.only(top: 250),
+        padding: EdgeInsets.only(top: 150),
         child: Center(
           child: Column(
             children: [
@@ -59,6 +59,38 @@ class _MissionPageState extends State<MissionPage> {
                     fontSize: 15,
                   ),
                   textAlign: TextAlign.center,
+                ),
+              ),
+
+              SizedBox(height: 30), // PADDING
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Row(
+                  children: [
+                    Icon(Icons.check_box_outline_blank),
+                    Text("Take the quiz to help you find your dream job.")
+                  ],
+                ),
+              ),
+              
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Row(
+                  children: [
+                    Icon(Icons.check_box_outline_blank),
+                    Text("Check out the resources page.")
+                  ],
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Row(
+                  children: [
+                    Icon(Icons.check_box_outline_blank),
+                    Text("Talk to a mentor.")
+                  ],
                 ),
               )
             ],
