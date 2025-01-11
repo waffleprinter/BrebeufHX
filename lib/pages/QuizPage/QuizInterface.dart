@@ -5,57 +5,56 @@ import '../class/Quiz.dart';
 import '../home_page.dart';
 class QuizInterface extends StatefulWidget {
   final List<double> weight = [0.2, 0.3, 0.3, 0.2];
-
-  final options = [
+  final options = [[
     // Interests
     ['Creating something', 'Meeting new people', 'Learning something new'],
     ['Art class', 'ECR/languages', 'Science class'],
     ['Making something with your hands', 'Making something with other people', 'Making something with your computer'],
     ['Through visual means (e.g., drawings, layouts)', 'By talking about it with others', 'By writing about it'],
     ['Starting it on your own', 'After a technical program', 'After a university degree'],
-    ['Yourself', 'The government', 'A private company'],
+    ['Yourself', 'The government', 'A private company']],
 
     // Competency
-    ['Arts', 'Humanities', 'Science'],
+    [['Arts', 'Humanities', 'Science'],
     ['Alone', 'Small team', 'Large team'],
     ['Making the project look good', 'Making the project fun for viewers', 'Writing the info for the project'],
     ['Creative', 'Social', 'Hardworking'],
     ['Emotions', 'Logic', 'Consulting others'],
-    ['CST', 'SN', 'other/neither'],
+    ['CST', 'SN', 'other/neither']],
 
     // Values
-    ['With creativity', 'With teamwork', 'With logic'],
+    [['With creativity', 'With teamwork', 'With logic'],
     ['A beautiful art piece', 'A project that helps your community', 'A technological innovation'],
     ['Expressing yourself', 'Helping people', 'Making money'],
     ['Human rights', 'Poverty', 'Climate change'],
     ['Community', 'Expression', 'Innovation'],
-    ['Shorter projects', 'Mid-length projects', 'Long term projects']
+    ['Shorter projects', 'Mid-length projects', 'Long term projects']]
   ];
 
-  final question = [
+  final question = [[
     // Interests
     'Which of these activities sounds the most fun to you?',
     'Which of these classes did you like best in highschool?',
     'Which of these do you prefer doing?',
     'How do you like communicating your ideas?',
     'How would you like to get into your career?',
-    'Which would you rather work for?',
+    'Which would you rather work for?'],
 
     // Competency
-    'Which domain are you most skilled in?',
+    ['Which domain are you most skilled in?',
     'What size team would you rather work with?',
     'Which role do you normally occupy on a group project?',
     'How would you describe yourself?',
     'What do you make decisions based on?',
-    'What profile did you take in highschool in sec 4 and 5?',
+    'What profile did you take in highschool in sec 4 and 5?'],
 
     // Values
-    'How do you prefer solving problems?',
+    ['How do you prefer solving problems?',
     'What kind of project would you be more proud of making?',
     'Which of these is most important to you in your career?',
     'What problem would you rather help solve?',
     'What is more important to you?',
-    'What kind of project do you work best on?'
+    'What kind of project do you work best on?']
   ];
 
   final section = ['Interests', 'Competancy','Values'];
@@ -219,7 +218,7 @@ class _QuizInterfaceState extends State<QuizInterface> {
                   return SectionTile(
                     itemIndex: index,
                     optionItemIndex: widget.options[index],
-                    question: widget.question,
+                    question: widget.question[index],
                     section: widget.section[index],
                     weight: widget.weight[index],
                     scores: widget.scores,

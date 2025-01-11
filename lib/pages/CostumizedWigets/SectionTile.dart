@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class SectionTile extends StatefulWidget {
   final int itemIndex;
-  final List<String> optionItemIndex;
+  final List<List<String>> optionItemIndex;
   final List<String> question;
   final String section;
   final double weight;
@@ -86,7 +86,7 @@ class _SectionTileState extends State<SectionTile> {
                 itemBuilder: (context, index) {
                   return QuestionTile(
                     itemIndex: index,
-                    optionItemIndex: widget.optionItemIndex,
+                    optionItemIndex: widget.optionItemIndex[index],
                     question: widget.question[index],
                     section: widget.section,
                     scores: widget.scores[index],
