@@ -1,4 +1,5 @@
 import 'package:brebeuf_hx/pages/CostumizedWigets/SectionTile.dart';
+import 'package:brebeuf_hx/pages/result_display.dart';
 import 'package:flutter/material.dart';
 
 import '../class/Quiz.dart';
@@ -205,7 +206,7 @@ class _QuizInterfaceState extends State<QuizInterface> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFAA5151),
+      backgroundColor: Color(0xFFBDC7CB),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(
@@ -249,7 +250,7 @@ class _QuizInterfaceState extends State<QuizInterface> {
                     print('Quiz completed! Final score: ${widget.finalScore}');
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomePage())
+                      MaterialPageRoute(builder: (context) => ResultDisplay(finalScore: widget.finalScore))
                     );
                   },
                   child: Text('Finish Quiz'),
