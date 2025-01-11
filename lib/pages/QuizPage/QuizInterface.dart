@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../class/Quiz.dart';
 import '../home_page.dart';
 class QuizInterface extends StatefulWidget {
-  final List<double> weight = [0.2, 0.3, 0.3, 0.2];
+  final List<double> weight = [0.4, 0.2, 0.4];
   final options = [[
     // Interests
     ['Creating something', 'Meeting new people', 'Learning something new'],

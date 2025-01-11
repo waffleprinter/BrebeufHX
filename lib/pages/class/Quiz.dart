@@ -19,9 +19,8 @@ class Quiz {
       var list = List.generate(totalScore[0][0].length, (index) => 0);
 
       // Iterate over each question's score in the section
-      for (List<int> questionScoreList in sectionScoreList) {
-        for (int i = 0; i < questionScoreList.length; i++) {
-          // Add the score to the corresponding index in 'list'
+      for (int i = 0; i < totalScore[0][0].length; i++) {
+        for (List<int> questionScoreList in sectionScoreList) {
           list[i] += questionScoreList[i];
         }
       }
