@@ -1,55 +1,35 @@
-import 'package:brebeuf_hx/pages/page1.dart';
-import 'package:brebeuf_hx/pages/page2.dart';
-import 'package:brebeuf_hx/pages/page3.dart';
+import 'package:brebeuf_hx/components/bottom_navigation_bar.dart';
+import 'package:brebeuf_hx/pages/mission_page.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int _selectedIndex = 0;
+
+  void _navigateBottomBar(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  final List<Widget> _pages = [
+    const MissionPage(),
+    // ADD OTHER PAGES HERE
+  ];
+
+  @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-        length: 4,
-        child: Scaffold(
-          bottomNavigationBar: BottomAppBar(
-            child: TabBar(
-              onTap: (index) {
-                switch (index) {
-                  case 0:
-                    // DOES NOTHING SINCE WE ARE ALREADY ON THE HOME PAGE
-                    break;
-
-                  case 1:
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Page1()), // SWITCH TO QUIZ
-                    );
-                    break;
-
-                  case 2:
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Page2()), // SWITCH TO RESOURCES
-                    );
-                    break;
-
-                  case 3:
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Page3()), // SWITCH TO PROFILE
-                    );
-                    break;
-                }
-              },
-                tabs: <Widget>[
-                  Tab(icon: Icon(Icons.home), text: "Home"),
-                  Tab(icon: Icon(Icons.question_mark), text: "Quiz"),
-                  Tab(icon: Icon(Icons.book), text: "Res."),
-                  Tab(icon: Icon(Icons.face), text: "Profile")
-                ]
-            ),
-          ),
-        )
+    return Scaffold(
+      bottomNavigationBar: MyBottomNavBar(
+        onTabChange: (index) => _navigateBottomBar(index),
+      ),
+      body: _pages[_selectedIndex]
     );
   }
 }
