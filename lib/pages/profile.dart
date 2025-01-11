@@ -21,10 +21,9 @@ class _ProfileState1 extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
       appBar: AppBar(
         title: Text("Create a profile"),
-        backgroundColor: Colors.amber[700],
+        backgroundColor: Colors.grey.shade300,
       ),
       body: Center(
         child: Padding(
