@@ -49,7 +49,7 @@ class _QuestionTileState extends State<QuestionTile> {
         },
         child: Container(
           width: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.only(top: 2, bottom: 10, left: 10, right: 10),
+          padding: EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 10),
           decoration: BoxDecoration(
             color: Color(0xFFFFFFFF),
             borderRadius: BorderRadius.circular(8),
@@ -64,20 +64,19 @@ class _QuestionTileState extends State<QuestionTile> {
                   // Use Expanded to handle overflow issue
                   Expanded(
                     child: Text(
-                      'Question: ${widget.question}',
-                      style: TextStyle(fontSize: 20),
+                      widget.question,
+                      style: TextStyle(fontSize: 12),
                       overflow: TextOverflow.ellipsis, // Ensure overflow is handled
-                      maxLines: 1, // Limit to one line
+                      maxLines: 1,
                     ),
                   ),
-                  Text('${widget.section} Section'),
                 ],
               ),
               SizedBox(height: 10),
               // Options
               Container(
                 decoration: BoxDecoration(
-                  color: Color(0xFF8C8C8C),
+                  color: Color(0xFFD6E5EC),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Padding(

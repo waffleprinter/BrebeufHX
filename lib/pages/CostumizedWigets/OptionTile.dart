@@ -34,7 +34,7 @@ class _OptionTileTileState extends State<OptionTile> {
         },
         child: Container(
           decoration: BoxDecoration(
-            color: Color(0xFFC8C8C8),
+            color: Color(0xFFFFFFFF),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Padding(
@@ -53,7 +53,10 @@ class _OptionTileTileState extends State<OptionTile> {
                         });
                       },
                     ),
-                    Text('option: ${widget.option}'),
+                    Text(widget.option,
+                    style: TextStyle(
+                      fontSize: 10
+                    ),),
                   ],
                 ),
                 SizedBox(width: 10),

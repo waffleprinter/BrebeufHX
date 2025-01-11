@@ -65,10 +65,11 @@ class _SectionTileState extends State<SectionTile> {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   'Section: ${widget.section}',
-                  style: TextStyle(fontSize: 36),
+                  style: TextStyle(fontSize: 20),
                 ),
                 Text('Weight: ${widget.weight * 100}%'),
               ],
@@ -76,7 +77,7 @@ class _SectionTileState extends State<SectionTile> {
             SizedBox(height: 10),
             Container(
               decoration: BoxDecoration(
-                color: Color(0xFF8C8C8C),
+                color: Color(0xFFD6E5EC),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: ListView.builder(
