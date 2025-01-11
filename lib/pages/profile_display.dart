@@ -60,7 +60,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.grey.shade300,
+                    color: Colors.pink[100],
                     borderRadius: BorderRadius.circular(20)
                   ),
                   child: Padding(
