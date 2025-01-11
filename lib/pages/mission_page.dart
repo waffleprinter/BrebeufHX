@@ -8,11 +8,15 @@ class MissionPage extends StatefulWidget {
 }
 
 class _MissionPageState extends State<MissionPage> {
+  bool _hasTakenQuiz = false;
+  bool _hasVisitedResourcePage = false;
+  bool _hasTalkedToMentor = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.only(top: 150),
+        padding: EdgeInsets.only(top: 100),
         child: Center(
           child: Column(
             children: [
@@ -62,36 +66,39 @@ class _MissionPageState extends State<MissionPage> {
                 ),
               ),
 
-              SizedBox(height: 30), // PADDING
+              SizedBox(height: 60), // PADDING
 
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  children: [
-                    Icon(Icons.check_box_outline_blank),
-                    Text("Take the quiz to help you find your dream job.")
-                  ],
-                ),
-              ),
-              
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  children: [
-                    Icon(Icons.check_box_outline_blank),
-                    Text("Check out the resources page.")
-                  ],
-                ),
+              CheckboxListTile(
+                value: _hasTakenQuiz,
+                onChanged: (bool? value) {
+                  setState(() {
+                    _hasTakenQuiz = !_hasTakenQuiz;
+                  });
+                },
+                title: Text("Take the quiz to help you find your dream job"),
+                controlAffinity: ListTileControlAffinity.leading,
               ),
 
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  children: [
-                    Icon(Icons.check_box_outline_blank),
-                    Text("Talk to a mentor.")
-                  ],
-                ),
+              CheckboxListTile(
+                value: _hasVisitedResourcePage,
+                onChanged: (bool? value) {
+                  setState(() {
+                    _hasVisitedResourcePage = !_hasVisitedResourcePage;
+                  });
+                },
+                title: Text("Check out the resources page"),
+                controlAffinity: ListTileControlAffinity.leading,
+              ),
+
+              CheckboxListTile(
+                value: _hasTalkedToMentor,
+                onChanged: (bool? value) {
+                  setState(() {
+                    _hasTalkedToMentor = !_hasTalkedToMentor;
+                  });
+                },
+                title: Text("Talk to a mentor"),
+                controlAffinity: ListTileControlAffinity.leading,
               )
             ],
           ),
